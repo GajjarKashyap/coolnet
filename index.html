@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamVista Premium</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="logo-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="StreamVista" class="logo">
+            <span class="developer-tag">PREMIUM EDITION</span>
+        </div>
+        <nav class="nav">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search movies..." id="search-input">
+                <div class="search-results" id="search-results"></div>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Profile" class="profile">
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">StreamVista Premium</h1>
+            <h2 class="hero-subtitle">The ultimate streaming experience with advanced features</h2>
+            <div class="hero-buttons">
+                <button class="hero-button primary">
+                    <i class="fas fa-play"></i> Play Now
+                </button>
+                <button class="hero-button secondary">
+                    <i class="fas fa-info-circle"></i> More Info
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Movie -->
+    <section class="featured">
+        <img src="https://image.tmdb.org/t/p/w1400_and_h450_face/1XDDXPXGiI8id7MrUxK36ke7gkX.jpg" class="featured-background">
+        <div class="featured-gradient"></div>
+        <div class="featured-content">
+            <img src="https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.png" class="featured-logo">
+            <p class="featured-description">
+                A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.
+            </p>
+            <div class="featured-meta">
+                <span class="featured-rating">92% Match</span>
+                <span class="featured-year">2010</span>
+                <span class="featured-duration">2h 28m</span>
+            </div>
+            <div class="featured-buttons">
+                <button class="hero-button primary">
+                    <i class="fas fa-play"></i> Play
+                </button>
+                <button class="hero-button secondary">
+                    <i class="fas fa-plus"></i> My List
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Rows -->
+    <section class="content">
+        <div class="row">
+            <div class="row-header">
+                <h3 class="row-title"><i class="fas fa-fire"></i> Trending Now</h3>
+                <div class="row-controls">
+                    <button class="row-button prev" data-row="trending">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="row-button next" data-row="trending">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="row-content" id="trending"></div>
+        </div>
+
+        <div class="row">
+            <div class="row-header">
+                <h3 class="row-title"><i class="fas fa-star"></i> Top Rated</h3>
+                <div class="row-controls">
+                    <button class="row-button prev" data-row="top-rated">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="row-button next" data-row="top-rated">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="row-content" id="top-rated"></div>
+        </div>
+
+        <div class="row">
+            <div class="row-header">
+                <h3 class="row-title"><i class="fas fa-clock"></i> Recently Added</h3>
+                <div class="row-controls">
+                    <button class="row-button prev" data-row="recent">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="row-button next" data-row="recent">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="row-content" id="recent"></div>
+        </div>
+
+        <div class="row">
+            <div class="row-header">
+                <h3 class="row-title"><i class="fas fa-plus"></i> My List</h3>
+                <div class="row-controls">
+                    <button class="row-button prev" data-row="my-list">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="row-button next" data-row="my-list">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="row-content" id="my-list"></div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <iframe class="modal-trailer" id="modal-trailer" frameborder="0" allowfullscreen></iframe>
+            <div class="modal-details">
+                <h2 class="modal-title">
+                    Inception
+                    <span class="modal-badge">NEW</span>
+                </h2>
+                <div class="modal-meta">
+                    <span>2020</span>
+                    <span>2h 28m</span>
+                    <span class="modal-rating">
+                        <i class="fas fa-star"></i>
+                        <span>8.8</span>
+                    </span>
+                </div>
+                <p class="modal-description">
+                    A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.
+                </p>
+                <div class="modal-cast">
+                    <div class="cast-member">
+                        <img src="https://image.tmdb.org/t/p/w200/edDpmBy48AB1vZNDvryBBdfq5To.jpg" class="cast-photo">
+                        <span class="cast-name">Leonardo DiCaprio</span>
+                    </div>
+                    <div class="cast-member">
+                        <img src="https://image.tmdb.org/t/p/w200/nORMXEkYEbzkU5WkMWMgRDJwFC.jpg" class="cast-photo">
+                        <span class="cast-name">Joseph Gordon-Levitt</span>
+                    </div>
+                    <div class="cast-member">
+                        <img src="https://image.tmdb.org/t/p/w200/2qhIDp44cAqP2eOjKbi2tbxMXsU.jpg" class="cast-photo">
+                        <span class="cast-name">Ellen Page</span>
+                    </div>
+                    <div class="cast-member">
+                        <img src="https://image.tmdb.org/t/p/w200/3PvQkFBOjbh9WWPx2xQqIVjJ3A9.jpg" class="cast-photo">
+                        <span class="cast-name">Tom Hardy</span>
+                    </div>
+                    <div class="cast-member">
+                        <img src="https://image.tmdb.org/t/p/w200/4m1Q3R4sAHYVipj7b4uqs6fEyaB.jpg" class="cast-photo">
+                        <span class="cast-name">Ken Watanabe</span>
+                    </div>
+                </div>
+                <div class="modal-buttons">
+                    <button class="modal-button primary">
+                        <i class="fas fa-play"></i> Play Now
+                    </button>
+                    <button class="modal-button secondary">
+                        <i class="fas fa-plus"></i> Add to List
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <div>
+                    <a href="#" class="footer-link">Audio Description</a>
+                    <a href="#" class="footer-link">Investor Relations</a>
+                    <a href="#" class="footer-link">Legal Notices</a>
+                </div>
+                <div>
+                    <a href="#" class="footer-link">Help Center</a>
+                    <a href="#" class="footer-link">Jobs</a>
+                    <a href="#" class="footer-link">Cookie Preferences</a>
+                </div>
+                <div>
+                    <a href="#" class="footer-link">Gift Cards</a>
+                    <a href="#" class="footer-link">Terms of Use</a>
+                    <a href="#" class="footer-link">Corporate Information</a>
+                </div>
+                <div>
+                    <a href="#" class="footer-link">Media Center</a>
+                    <a href="#" class="footer-link">Privacy</a>
+                    <a href="#" class="footer-link">Contact Us</a>
+                </div>
+            </div>
+            <p class="copyright">
+                © 2025 StreamVista Premium. All content is used for demonstration purposes only.
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>  <!-- Link to your JavaScript file -->
+</body>
+</html>
